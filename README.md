@@ -1,1 +1,1 @@
-"# USTHBMosqueWebSite" 
+# USTHBMosqueWebSite

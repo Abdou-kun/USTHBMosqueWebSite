@@ -3,9 +3,9 @@
 /* Variables */
 :root{
     /* Colors */
-    --dark-color: #000;
-    --light-color: #fff;
-    --gold-color: gold;
+    --dark-color: #071330;
+    --light-color: #fefefe;
+    --gold-color: #d6ab28;
 
     /* Background Colors */
 
@@ -15,6 +15,9 @@
     --header-padding: 10px;
     --link-padding: 0 20px;
     --header-btn-padding: 10px 20px;
+
+    /* Heights */
+    --home-height: 92.5vh;
 }
 
 /* General rules */
@@ -22,6 +25,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: var(--dark-color);
 }
 
 html{scroll-behavior: smooth;}
@@ -37,25 +41,41 @@ html{scroll-behavior: smooth;}
 
 button{border-radius: 50px;}
 
+button{
+    background-color: var(--gold-color);
+    padding: var(--header-btn-padding);
+    border: 1px solid var(--gold-color);
+}
+
+button:hover{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    font-weight: bold;
+    border: 1px solid var(--dark-color);
+    cursor: pointer;
+}
+
 /* Header Style */
 header{
     height: 7.5vh;
-    padding-top: var(--header-padding);}
+    padding-top: var(--header-padding);
+}
 
 header .container{
     justify-content: space-between;
     align-items: center;
+    color: var(--gold-color);
+}
+
+.link-list{
+    justify-content: space-between;
 }
 
 .link-item{
     display: inline-flex;
-    padding: var(--link-padding);
 }
 
-.link-item a{
-    text-decoration: none;
-    color: var(--dark-color);
-}
+.link-item a{text-decoration: none;}
 
 .link-item a:hover{color: var(--gold-color);}
 
@@ -66,12 +86,35 @@ header .container{
 }
 
 .header-btn:hover{
-    background-color: var(--gold-color);
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    border: 1px solid var(--dark-color);
     cursor: pointer;
 }
 
 /* Home Style */
+#home{
+    height: var(--home-height);
+    background-color: #aaa;
+}
 
+#home .container{
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-informations{
+    width: 70%;
+    text-align: center;
+}
+
+.prayer-times{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
 /* About Style */
 

@@ -3,10 +3,18 @@
 /* Variables */
 :root{
     /* Colors */
+    --dark-color: #000;
+    --light-color: #fff;
+    --gold-color: gold;
 
     /* Background Colors */
 
     /* Font */
+
+    /* Paddings */
+    --header-padding: 10px;
+    --link-padding: 0 20px;
+    --header-btn-padding: 10px 20px;
 }
 
 /* General rules */
@@ -19,7 +27,7 @@
 html{scroll-behavior: smooth;}
 
 .container{
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
 }
 
@@ -27,9 +35,43 @@ html{scroll-behavior: smooth;}
 
 .grid{display: grid;}
 
+button{border-radius: 50px;}
+
 /* Header Style */
+header{
+    height: 7.5vh;
+    padding-top: var(--header-padding);}
+
+header .container{
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link-item{
+    display: inline-flex;
+    padding: var(--link-padding);
+}
+
+.link-item a{
+    text-decoration: none;
+    color: var(--dark-color);
+}
+
+.link-item a:hover{color: var(--gold-color);}
+
+.header-btn{
+    background-color: transparent;
+    padding: var(--header-btn-padding);
+    border: 1px solid var(--gold-color);
+}
+
+.header-btn:hover{
+    background-color: var(--gold-color);
+    cursor: pointer;
+}
 
 /* Home Style */
+
 
 /* About Style */
 

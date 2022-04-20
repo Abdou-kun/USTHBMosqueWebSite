@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+/* Variables */
+:root{
+    /* Colors */
+
+    --dark-color : #071330;
+    --gold-color : #D6AB28;
+    --light-color : #fefefe ;
+
+    /* Background Colors */
+
+    --background-color :  rgb(253, 253, 253);
+    --shadow : rgba(3, 3, 3, 0.268);
+
+    /* Margins and Padding*/
+
+    --padding-section-title : 40px 40px 0px 40px;
+    --padding-section-description : 5px 240px 30px 240px;
+    --padding-logo : 11px 0px 11px 0px ;
+    --padding-grid : 20px 40px 40px 40px ;
+    --margin-div-title : 10px 0px 10px 0px;
+    --margin-auto : auto;
+
+    /* Font */
+
+    --font-familly: Bradley Hand, cursive;
+}
+
+/* General rules */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{scroll-behavior: smooth;}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.flex{display: flex;}
+
+.grid{display: grid;}
+
+/* Header Style */
+
+/* Home Style */
+
+/* About Style */
+
+.about{
+    margin: 20px 0px;
+    height: 100vh;
+}
+
+.section-title
+{
+    font-family: var(--font-familly);
+    padding: var(--padding-section-title);
+    color: var(--black-color);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-description
+{
+    font-family: var(--font-familly);
+    padding: var(--padding-section-description);
+    color: var(--black-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.grid-cases 
+{
+    display: grid;
+    column-gap: 100px;
+    row-gap: 60px;
+    grid-template-columns: auto auto;
+    background-color: var(--background-color);
+    margin: var(--margin-auto);
+
+}
+  
+.grid-item 
+{
+    box-shadow: 0px 10px 10px 0px var(--shadow);
+    background-color: var(--light-color);
+    padding: var(--padding-grid);
+    margin: var(--margin-auto);
+    text-align: center;
+    height: 200px;
+    width: 400px;
+}
+
+.div-logo
+{
+    margin: var(--margin-auto);
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    background-color: var(--gold-color);
+}
+
+.logo
+{
+    border-radius: 25px;
+    background-color: var(--gold-color);
+    height: 60px;
+    padding: var(--padding-logo);
+}
+
+.div-title
+{
+    font-family: Bradley Hand, cursive;
+
+    margin: var(--margin-div-title) ;
+}
+
+.div-description
+{
+    font-family: Bradley Hand, cursive;
+}
+
+a
+{
+    color: var(--black-color);
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: var(--gold-color);
+}
+/* Event Style */
+
+/* Blog Style */
+
+/* Contact Style */
+
+/* Footer Style */

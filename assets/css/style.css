@@ -101,8 +101,8 @@ header{
     height: var(--header-height);
     position: sticky;
     top: 0;
-    background-color: #fff;
     z-index: 2;
+    background-color: #fff;
     box-shadow: 1px 1px 15px var(--dark-color);
 }
 

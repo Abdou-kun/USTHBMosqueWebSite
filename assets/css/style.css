@@ -6,6 +6,7 @@
     --dark-color: #071330;
     --light-color: #fefefe;
     --gold-color: #d6ab28;
+    --contact-input-color: #fcf6ea;
 
     /* Font */
     --title-font-size: 35px;
@@ -173,10 +174,16 @@ header .container{
 /* About Style */
 .about-item{height: 100%;}
 
+.about-item .container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .about-img{
     width: 90%;
     max-width: 800px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .about-content{position: relative;}
@@ -250,19 +257,54 @@ header .container{
 /* Blog Style */
 
 /* Contact Style */
+#contact{height: 50vh;}
+
 #contact .container{
-   flex-direction: column;
-   justify-content: flex-end;
-   align-items:center;
-   height: 50vh;
- }
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+}
+
+.email{
+    margin-top: 20px;
+    width: 100%;
+    position: relative;
+}
+
+.email-input{
+    display: inline-block;
+    width: 100%;
+    padding: 13px 10px;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--contact-input-color);
+    color: var(--gold-color);
+}
+
+.email-btn{
+    position: absolute;
+    right: 0;
+    margin-top: 0;
+}
 
 /* Footer Style */
-#footer .container{
-    justify-content:space-between ;
+#footer{height: 50vh;}
+
+#footer .sub-container{
+    margin-top: 100px;
+    justify-content: space-between ;
     align-items: center;
-    
 }
-.media li{
-display: inline-block;
+
+.social-media li{
+    display: inline-block;
+}
+
+.social-item{
+    padding: 5px 10px;
+    margin-left: 5px;
+    color: var(--light-color);
+    background-color: var(--dark-color);
+    border-radius: 100%;
 }

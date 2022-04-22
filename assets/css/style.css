@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+/* Variables */
+:root{
+    /* Colors */
+
+    /* Background Colors */
+
+    /* Font */
+}
+
+/* General rules */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{scroll-behavior: smooth;}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px;
+    
+
+  
+}
+
+.flex-container{
+    display: flex;
+    justify-content: center;
+    column-gap:80px ;
+}
+
+.flex{display: flex;}
+
+.grid{display: grid;}
+
+/* Header Style */
+
+/* Home Style */
+
+/* About Style */
+
+/* Event Style */
+
+/* Blog Style */
+
+/* Contact Style */
+#contact .container{
+   flex-direction: column;
+   justify-content: flex-end;
+   align-items:center;
+   height: 50vh;
+
+ }
+
+/* Footer Style */
+#footer .container{
+    justify-content:space-between ;
+    align-items: center;
+    
+}
+.media li{
+display: inline-block;
+
+}

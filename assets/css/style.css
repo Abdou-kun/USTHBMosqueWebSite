@@ -62,9 +62,6 @@ main > section{
     width: 70%;
     height: 100%;
     margin: 0 auto;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .flex{display: flex;}
@@ -107,7 +104,6 @@ header{
 }
 
 header .container{
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
@@ -213,7 +209,6 @@ header .container{
 
 /* Event Style */
 #event .container{
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     text-align: start;
@@ -255,5 +250,19 @@ header .container{
 /* Blog Style */
 
 /* Contact Style */
+#contact .container{
+   flex-direction: column;
+   justify-content: flex-end;
+   align-items:center;
+   height: 50vh;
+ }
 
 /* Footer Style */
+#footer .container{
+    justify-content:space-between ;
+    align-items: center;
+    
+}
+.media li{
+display: inline-block;
+}

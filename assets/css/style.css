@@ -16,11 +16,10 @@
 
     /* Positions */
     --prayer-times-position: -35px;
-    --vision-position: -20%;
+    --vision-position: 50px;
 
     /* Margins */
-    --section-margin: 20px;
-    --navigation-margin: 70px;
+    --section-margin: 50px;
     --btn-margin: 30px;
     --section-description-margin: 20px;
     --prayer-name-margin: 10px;
@@ -31,6 +30,7 @@
     --prayer-time-border: 1px solid #eee;
 
     /* Paddings */
+    --section-padding: 50px;
     --header-padding: 10px;
     --link-padding: 0 20px;
     --header-btn-padding: 10px 20px;
@@ -38,16 +38,18 @@
     --vision-padding: 20px 10px;
     --padding-logo : 11px 0px;
     --grid-padding : 15px 30px;
+    --footer-padding: 30px;
     
     /* Widths */
+    --navigation-width: 50%;
     --prayer-time-width: 17%;
     --event-content-width: 35%;
     --event-img-width: 60%;
     --event-img-min-width: 309px;
 
     /* Heights */
-    --header-height: 7.5vh;
-    --home-height: 87.5vh;
+    --header-height: 50.55px;
+    --home-height: 720px;
     --description-line-height: 25px;
 }
 
@@ -61,15 +63,14 @@
 html{scroll-behavior: smooth;}
 
 main > section{
-    height: 100vh;
     margin-bottom: var(--section-margin);
+    padding-top: var(--section-padding);
     text-align: center;
     color: var(--dark-color);
 }
 
 .container{
     width: 70%;
-    height: 100%;
     margin: 0 auto;
 }
 
@@ -114,14 +115,18 @@ header{
 }
 
 header .container{
+    height: 100%;
     justify-content: space-between;
     align-items: center;
 }
 
-.link-item{
-    display: inline-flex;
-    margin-left: var(--navigation-margin);
+#navigation{width: var(--navigation-width);}
+
+.link-list{
+    justify-content: space-between;
+    list-style: none;
 }
+
 
 .link-item a{text-decoration: none;}
 
@@ -149,6 +154,7 @@ header .container{
 }
 
 #home .container{
+    height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -183,15 +189,12 @@ header .container{
 }
 
 /* About Style */
-#about{height: auto;}
-
-.about-item{height: 100vh;}
+.about-item:first-child{margin-bottom: var(--section-margin);}
 
 .about-item .container{
     height: 100%;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
 .about-img{
@@ -200,16 +203,15 @@ header .container{
     margin-top: 10px;
 }
 
-.about-content{position: relative;}
-
 .vision-mission{
-    justify-content: space-evenly;
-    position: absolute;
+    justify-content: center;
+    column-gap: 50px;
+    position: relative;
     bottom: var(--vision-position);
 }
 
 .vision, .mission{
-    width: 40%;
+    width: 30%;
     padding: var(--vision-padding);
     background-color: var(--light-color);
     box-shadow: 1px 1px 5px var(--shadow-color);
@@ -241,6 +243,7 @@ header .container{
     min-width: 350px;
     box-shadow: 1px 1px 15px var(--shadow-color);
     padding: var(--grid-padding);
+    border-radius: 10px;
     text-align: center;
 }
 
@@ -252,7 +255,7 @@ header .container{
     background-color: var(--gold-color);
 }
 
-#about .logo {
+.service-logo img {
     border-radius: 25px;
     background-color: var(--gold-color);
     height: 60px;
@@ -316,11 +319,8 @@ a:hover {
 /* Blog Style */
 
 /* Contact Style */
-#contact{height: 50vh;}
-
 #contact .container{
     flex-direction: column;
-    justify-content: flex-end;
     align-items: center;
     width: 30%;
     text-align: center;
@@ -343,12 +343,10 @@ a:hover {
 }
 
 /* Footer Style */
-#footer{height: 15vh;}
-
-#footer .sub-container{
-    margin-top: 100px;
+#footer .container{
     justify-content: space-between ;
     align-items: center;
+    padding: var(--footer-padding) 0;
 }
 
 .social-media li{
@@ -361,4 +359,96 @@ a:hover {
     color: var(--light-color);
     background-color: var(--dark-color);
     border-radius: 100%;
+}
+
+/* Media Querie */
+
+/* Medium screen */
+@media (max-width: 1200px){
+    /* General rules */
+    .container{width: 80%;}
+
+    /* About Style */
+    .vision-mission{
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+    }
+
+    .vision, .mission{width: 90%;}
+
+    .service-item{width: 70%;}
+
+    /* Event Style */
+    #event .container{
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 20px;
+    }
+
+    .event-img{--event-img-width: 100%;}
+
+    .event-content{--event-content-width: 100%;}
+
+    /* Contact Style */
+    #contact .container{width: 50%;}
+}
+
+/* small screen */
+@media (max-width: 700px){
+    /* General Rules */
+    .container{width: 90%;}
+
+    /* Header Style */
+    header{
+        height: auto;
+        padding: 10px 0;
+    }
+
+    header .container{
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 10px;
+    }
+
+    #navigation{--navigation-width: 75%;}
+
+    /* Home Style */
+    .home-informations{width: 75%;}
+
+    /* Footer Style */
+    footer .container{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+}
+
+/* very small screen */
+@media (max-width: 500px){
+    /*Header Style */
+    #navigation{--navigation-width: 90%;}
+
+    /* Home Style */
+    .home-informations{
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    #home .section-title{--home-font-size: 40px;}
+
+    .home-btn{--btn-margin: 10px;}
+
+    .prayer-times{
+        flex-direction: column;
+        align-items: center;
+        row-gap: 10px;
+        position: relative;
+        margin-top: 30px;
+    }
+
+    .prayer-item{width: 70%;}
+
+    /* About Style */
+    #about{margin-top: 100px;}
 }

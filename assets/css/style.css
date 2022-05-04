@@ -9,6 +9,10 @@
     --contact-input-color: #fcf6ea;
     --shadow-color : #eee;
 
+    /* Box Shadows */
+    --header-box-shadow: 1px 1px 15px var(--dark-color);
+    --footer-box-shadow: 1px 1px 15px var(--gold-color);
+
     /* Font */
     --title-font-size: 35px;
     --home-font-size: 60px;
@@ -62,6 +66,13 @@
 
 html{scroll-behavior: smooth;}
 
+body{
+    min-width: 350px;
+    max-width: 1920px;
+    font-family: 'Lemonada', cursive;
+    font-size: 10px;
+}
+
 main > section{
     margin-bottom: var(--section-margin);
     padding-top: var(--section-padding);
@@ -111,7 +122,7 @@ header{
     top: 0;
     z-index: 2;
     background-color: #fff;
-    box-shadow: 1px 1px 15px var(--dark-color);
+    box-shadow: var(--header-box-shadow);
 }
 
 header .container{
@@ -273,7 +284,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+.about-item a:hover {
     color: var(--gold-color);
 }
 
@@ -345,15 +356,24 @@ a:hover {
 }
 
 /* Footer Style */
-#footer .container{
+footer{
+    background-color: var(--gold-color);
+    box-shadow: var(--footer-box-shadow);
+}
+
+footer .container{
     justify-content: space-between ;
     align-items: center;
     padding: var(--footer-padding) 0;
 }
 
+.copy{font-size: 15px;}
+
 .social-media li{
     display: inline-block;
 }
+
+.social-media a:hover{color: var(--light-color);}
 
 .social-item{
     font-size: 20px;
@@ -366,6 +386,11 @@ a:hover {
 @media (max-width: 1200px){
     /* General rules */
     .container{width: 80%;}
+
+    /* Hom Style */
+    #home .section-title{--home-font-size: 40px;}
+
+    .home-btn{--btn-margin: 10px;}
 
     /* About Style */
     .vision-mission{
@@ -381,8 +406,8 @@ a:hover {
     /* Event Style */
     #event .container{
         flex-direction: column;
-        align-items: flex-start;
         row-gap: 20px;
+        text-align: center;
     }
 
     .event-img{--event-img-width: 100%;}
@@ -404,22 +429,10 @@ a:hover {
         padding: 10px 0;
     }
 
-    .navigation{--navigation-width: 60%;}
-
-    /* Home Style */
-    .home-informations{width: 75%;}
-
-    /* Footer Style */
-    footer .container{
-        flex-direction: column;
-        row-gap: 20px;
+    .navigation{
+        display: none;
+        --navigation-width: 0;
     }
-}
-
-/* very small screen */
-@media (max-width: 500px){
-    /*Header Style */
-    .navigation{display: none;}
 
     .link-list{
         position: absolute;
@@ -453,14 +466,7 @@ a:hover {
     }
 
     /* Home Style */
-    .home-informations{
-        width: 100%;
-        margin-top: 50px;
-    }
-
-    #home .section-title{--home-font-size: 40px;}
-
-    .home-btn{--btn-margin: 10px;}
+    .home-informations{width: 75%;}
 
     .prayer-times{
         flex-direction: column;
@@ -471,6 +477,21 @@ a:hover {
     }
 
     .prayer-item{width: 70%;}
+
+    /* Footer Style */
+    footer .container{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+}
+
+/* very small screen */
+@media (max-width: 500px){
+    /* Home Style */
+    .home-informations{
+        width: 100%;
+        margin-top: 50px;
+    }
 
     /* About Style */
     #about{margin-top: 100px;}

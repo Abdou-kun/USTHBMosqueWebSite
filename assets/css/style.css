@@ -494,7 +494,7 @@ footer .container{
 }
 
 /* very small screen */
-@media (max-width: 500px){
+@media (max-width: 544px){
     /* Home Style */
     .home-informations{
         width: 100%;

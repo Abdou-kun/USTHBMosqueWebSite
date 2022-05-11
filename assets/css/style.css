@@ -3,11 +3,13 @@
 /* Variables */
 :root{
     /* Colors */
-    --dark-color: #071330;
+    --dark-color: #01040c;
     --light-color: #fefefe;
     --gold-color: #d6ab28;
-    --contact-input-color: #fcf6ea;
     --shadow-color : #eee;
+
+    /* Box Shadows */
+    --box-shadow: 1px 1px 5px var(--shadow-color);
 
     /* Font */
     --title-font-size: 35px;
@@ -53,6 +55,12 @@
     --description-line-height: 25px;
 }
 
+body.dark{
+    /* Colors */
+    --light-color: #01040c;
+    --dark-color: #fefefe;
+}
+
 /* General rules */
 *{
     margin: 0;
@@ -61,6 +69,14 @@
 }
 
 html{scroll-behavior: smooth;}
+
+body{
+    min-width: 350px;
+    max-width: 1920px;
+    font-family: 'Lemonada', cursive;
+    font-size: 10px;
+    background-color: var(--light-color);
+}
 
 main > section{
     margin-bottom: var(--section-margin);
@@ -110,8 +126,8 @@ header{
     position: sticky;
     top: 0;
     z-index: 2;
-    background-color: #fff;
-    box-shadow: 1px 1px 15px var(--dark-color);
+    background-color: var(--light-color);
+    box-shadow: var(--box-shadow);
 }
 
 header .container{
@@ -119,6 +135,8 @@ header .container{
     justify-content: space-between;
     align-items: center;
 }
+
+.logo{color: var(--dark-color);}
 
 .nav-btn{visibility: hidden;}
 
@@ -148,6 +166,14 @@ header .container{
     cursor: pointer;
 }
 
+#change-theme{
+    position: absolute;
+    left: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--dark-color);
+}
+
 /* Home Style */
 #home{
     height: var(--home-height);
@@ -165,7 +191,7 @@ header .container{
 
 .home-informations{
     width: 50%;
-    color: var(--light-color);
+    color: #fefefe;
 }
 
 #home .section-title{font-size: var(--home-font-size);}
@@ -216,7 +242,7 @@ header .container{
     width: 30%;
     padding: var(--vision-padding);
     background-color: var(--light-color);
-    box-shadow: 1px 1px 5px var(--shadow-color);
+    box-shadow: var(--box-shadow);
     border-radius: 5px;
 }
 
@@ -243,9 +269,9 @@ header .container{
 .service-item {
     width: 40%;
     min-width: 350px;
-    box-shadow: 1px 1px 15px var(--shadow-color);
+    box-shadow: var(--box-shadow);
     padding: var(--grid-padding);
-    border-radius: 10px;
+    border-radius: 5px;
     text-align: center;
 }
 
@@ -273,7 +299,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+.about-item a:hover {
     color: var(--gold-color);
 }
 
@@ -328,32 +354,20 @@ a:hover {
     text-align: center;
 }
 
-.email{
-    margin-top: 20px;
-    width: 100%;
-    position: relative;
-}
-
-.email-input{
-    display: inline-block;
-    width: 100%;
-    padding: 13px 20px;
-    border: none;
-    border-radius: 50px;
-    background-color: var(--contact-input-color);
-    color: var(--gold-color);
-}
-
 /* Footer Style */
-#footer .container{
+footer .container{
     justify-content: space-between ;
     align-items: center;
     padding: var(--footer-padding) 0;
 }
 
+.copy{font-size: 15px;}
+
 .social-media li{
     display: inline-block;
 }
+
+.social-media a:hover{color: var(--gold-color);}
 
 .social-item{
     font-size: 20px;
@@ -366,6 +380,11 @@ a:hover {
 @media (max-width: 1200px){
     /* General rules */
     .container{width: 80%;}
+
+    /* Hom Style */
+    #home .section-title{--home-font-size: 40px;}
+
+    .home-btn{--btn-margin: 10px;}
 
     /* About Style */
     .vision-mission{
@@ -381,8 +400,8 @@ a:hover {
     /* Event Style */
     #event .container{
         flex-direction: column;
-        align-items: flex-start;
         row-gap: 20px;
+        text-align: center;
     }
 
     .event-img{--event-img-width: 100%;}
@@ -404,22 +423,10 @@ a:hover {
         padding: 10px 0;
     }
 
-    .navigation{--navigation-width: 60%;}
-
-    /* Home Style */
-    .home-informations{width: 75%;}
-
-    /* Footer Style */
-    footer .container{
-        flex-direction: column;
-        row-gap: 20px;
+    .navigation{
+        display: none;
+        --navigation-width: 0;
     }
-}
-
-/* very small screen */
-@media (max-width: 500px){
-    /*Header Style */
-    .navigation{display: none;}
 
     .link-list{
         position: absolute;
@@ -452,15 +459,15 @@ a:hover {
         cursor: pointer;
     }
 
-    /* Home Style */
-    .home-informations{
-        width: 100%;
-        margin-top: 50px;
+    #change-theme{
+        font-size: 15px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 
-    #home .section-title{--home-font-size: 40px;}
-
-    .home-btn{--btn-margin: 10px;}
+    /* Home Style */
+    .home-informations{width: 75%;}
 
     .prayer-times{
         flex-direction: column;
@@ -471,6 +478,21 @@ a:hover {
     }
 
     .prayer-item{width: 70%;}
+
+    /* Footer Style */
+    footer .container{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+}
+
+/* very small screen */
+@media (max-width: 500px){
+    /* Home Style */
+    .home-informations{
+        width: 100%;
+        margin-top: 50px;
+    }
 
     /* About Style */
     #about{margin-top: 100px;}

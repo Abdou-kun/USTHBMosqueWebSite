@@ -507,3 +507,8 @@ footer .container{
     /* Event Style */
     .event-img{--event-img-width: 100%;}
 }
+
+/* very very small screen */
+@media (max-width: 408px){
+    #home .section-title{font-size: 30px;}
+}

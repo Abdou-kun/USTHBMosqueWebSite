@@ -147,10 +147,12 @@ header .container{
     list-style: none;
 }
 
+.link-item {
+    text-decoration: none;
+    display: inline-block;
+}
 
-.link-item a{text-decoration: none;}
-
-.link-item a:hover{color: var(--gold-color);}
+.link-item:hover{color: var(--gold-color);}
 
 .header-btn{
     background-color: transparent;
@@ -313,6 +315,7 @@ a {
 .event-img{
     width: var(--event-img-width);
     min-width: var(--event-img-min-width);
+    max-width: 650px;
     border-radius: 10px;
 }
 
@@ -324,8 +327,9 @@ a {
 
 .arkan-islam{
     grid-template-columns: repeat(auto-fill, minmax(141px, 1fr));
-    column-gap: 40px;
+    column-gap: 20px;
     row-gap: 20px;
+    justify-content: center;
 }
 
 .arkan-item{
@@ -377,7 +381,7 @@ footer .container{
 /* Media Querie */
 
 /* Medium screen */
-@media (max-width: 1200px){
+@media (max-width: 1250px){
     /* General rules */
     .container{width: 80%;}
 
@@ -404,7 +408,7 @@ footer .container{
         text-align: center;
     }
 
-    .event-img{--event-img-width: 100%;}
+    .event-img{--event-img-width: 65%;}
 
     .event-content{--event-content-width: 100%;}
 
@@ -425,23 +429,25 @@ footer .container{
 
     .navigation{
         display: none;
-        --navigation-width: 0;
-    }
-
-    .link-list{
         position: absolute;
         left: 0;
         top: var(--header-height);
+    }
+
+    .link-list{
         flex-direction: column;
         justify-content: space-around;
         text-align: center;
         width: 100%;
-        height: 35vh;
         background-color: var(--dark-color);
     }
 
     /* Used for display the navbar after click on the nav-btn */
-    .disp-block{display: block;}
+    .disp-block{
+        display: block;
+        --navigation-width: 100%;
+    }
+    /*-------------------------*/
 
     .link-item{    
         width: 100%;
@@ -450,7 +456,7 @@ footer .container{
 
     .link-item:hover{background-color: var(--gold-color);}
 
-    .link-item a, .link-item a:hover{color: var(--light-color);}
+    .link-item, .link-item:hover{color: var(--light-color);}
     
     .nav-btn{
         visibility: visible;
@@ -460,9 +466,9 @@ footer .container{
     }
 
     #change-theme{
-        font-size: 15px;
-        left: 50%;
-        top: 50%;
+        position: relative;
+        top: 10px;
+        font-size: 20px;
         transform: translate(-50%, -50%);
     }
 
@@ -478,6 +484,9 @@ footer .container{
     }
 
     .prayer-item{width: 70%;}
+
+    /* Event Style */
+    .event-img{--event-img-width: 85%;}
 
     /* Footer Style */
     footer .container{
@@ -496,4 +505,7 @@ footer .container{
 
     /* About Style */
     #about{margin-top: 100px;}
+
+    /* Event Style */
+    .event-img{--event-img-width: 100%;}
 }
